@@ -1,0 +1,97 @@
+<app-navbar2></app-navbar2>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="bg-image">
+            <div class="up-text">
+                <p> Complete your profile </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="container col-md-6 ">
+
+            <form>
+                <div class="row ">
+
+
+                    <div class="form-group mt-2 ">
+                        <label for="companyName">Full Name</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Enter Full name"
+                            required>
+                    </div>
+
+                    <!-- Price with Material -->
+                    
+
+                </div>
+                <!-- Company Name -->
+                <!-- Price without Material -->
+                
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="cnic">Enter CNIC:</label>
+                    <input type="text" class="form-control" id="cnic" placeholder="35201-1234567-1" pattern="\d{5}-\d{7}-\d{1}" required>
+                    
+                  </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Enter Age</label>
+                    <input type="number" class="form-control" id="age" placeholder="Enter your age" min="1" max="120" required>
+                    
+                  </div>
+
+                <!-- Office Address -->
+                <div class="form-group">
+                    <label for="officeAddress"> Address</label>
+                    <input type="text" class="form-control" id="officeAddress" placeholder="Enter address"
+                        required>
+                </div>
+
+                <!-- Company Profile Picture -->
+                <div class="form-group">
+                    <label for="companyProfilePicture">Company Profile Picture</label><br>
+                    <input type="file" class="form-control-file" id="companyProfilePicture" required>
+                </div>
+
+                <!-- Location (Dropdown) -->
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select style="width: 400px;" class="form-control" id="location" required>
+                        <option value="" disabled selected>Select location</option>
+                        <option value="lahore">Lahore</option>
+                        <option value="islamabad">Islamabad</option>
+                        <option value="karachi">Karachi</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+               
+
+                <!-- Submit Button -->
+                <div class="  button1">
+                    <button (click)="navigateToMaindashboard()" type="submit" class="btn my-3 button">Submit</button>
+                   
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>

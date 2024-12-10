@@ -1,0 +1,9 @@
+.half-black {
+    height: 35vh; /* Half the viewport height */
+    background-color: black;
+  }
+  .required-asterisk {
+    color: red !important;
+    font-weight: bold !important;
+    margin-left: 5px !important;
+  }

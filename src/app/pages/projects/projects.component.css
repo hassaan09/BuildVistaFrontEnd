@@ -1,0 +1,18 @@
+.background{
+  display: block;
+  min-height: 100vh; /* Full height of the viewport */
+  background-image: url('/assets/images/projects1.jpg');
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-attachment: fixed; /* Keep the background fixed when scrolling */
+    
+}
+.outline-text {
+    color: white; /* Text color (change as needed) */
+    text-shadow: 
+      -1px -1px 0 #000,   /* Top-left shadow */
+       1px -1px 0 #000,   /* Top-right shadow */
+      -1px  1px 0 #000,   /* Bottom-left shadow */
+       1px  1px 0 #000;   /* Bottom-right shadow */
+  }

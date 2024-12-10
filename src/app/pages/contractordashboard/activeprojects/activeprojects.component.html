@@ -1,0 +1,34 @@
+<app-contractor-navbar></app-contractor-navbar>
+<div class="bg-gray-200">
+<div class="container bg-gray-200 py-4">
+    <h2>Current Projects</h2>
+  
+    <div class="project-list">
+      <div *ngFor="let project of projects" class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <p>Status: {{ project.status }}</p>
+          
+          <!-- Optional Progress Bar -->
+          <div *ngIf="project.progress !== undefined" class="progress mb-2">
+            <div 
+              class="progress-bar" 
+              [style.width.%]="project.progress" 
+              [ngClass]="{
+                'bg-success': project.progress >= 75,
+                'bg-warning': project.progress >= 50 && project.progress < 75,
+                'bg-danger': project.progress < 50
+              }">
+              {{ project.progress }}%
+            </div>
+          </div>
+  
+          <app-button class="" label="View Details" styleType="simple" (click)="navigateToProjectdashboard()">
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<app-footer></app-footer>
+<app-root></app-root>

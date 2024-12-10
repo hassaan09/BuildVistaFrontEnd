@@ -1,0 +1,45 @@
+<app-navbar2></app-navbar2>
+<div class="pl-8">
+    <div class="settings-section account-settings">
+        <h2>Account Settings</h2>
+      
+        <!-- Display Mode -->
+        <div *ngIf="!isEditing">
+          <p><strong>Full Name:</strong> {{ user.fullName }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
+          <button class="edit-button" (click)="navigateToClientform()">Edit</button>
+        </div>
+      
+        <!-- Edit Mode -->
+        
+      </div>
+      
+  <div class="settings-section">
+    <h2>Notification Settings</h2>
+    
+    <label class="toggle-switch">
+      <input type="checkbox" [(ngModel)]="notificationsEnabled" (change)="toggleNotifications()" />
+      <span class="slider"></span>
+    </label>
+    
+    <p>{{ notificationsEnabled ? 'Notifications are enabled.' : 'Notifications are disabled.' }}</p>
+  </div>
+  
+  <div class="settings-section">
+    <h2>Change Password</h2>
+    
+    <label for="currentPassword">Current Password<span class="required-asterisk">*</span></label>
+    <input type="password" id="currentPassword" required />
+  
+    <label for="newPassword">New Password<span class="required-asterisk">*</span></label>
+    <input type="password" id="newPassword" required />
+  
+    <label for="confirmPassword">Confirm New Password<span class="required-asterisk">*</span></label>
+    <input type="password" id="confirmPassword"  required />
+  
+    <button >Update Password</button>
+  </div>
+</div>
+<app-footer></app-footer>
+<app-root></app-root>

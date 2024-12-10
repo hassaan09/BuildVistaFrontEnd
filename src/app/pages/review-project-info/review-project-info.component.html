@@ -1,0 +1,52 @@
+<app-navbar2></app-navbar2>
+<div class="review-container bg-white mx-auto p-8 mt-10 shadow-lg max-w-2xl">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Review Your Project Details</h2>
+    
+    <!-- Project Details Section -->
+    <div class="project-details space-y-4">
+        <div class="flex justify-between">
+            <p><strong>Project Name:</strong> {{ projectName }}</p>
+            <button (click)="editField('projectName')" class="text-black">Edit</button>
+        </div>
+        
+        <div class="flex justify-between">
+            <p><strong>Project Location:</strong> {{ projectLocation }}</p>
+            <button (click)="editField('projectLocation')" class="text-black">Edit</button>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Project Type:</strong> {{ projectType }}</p>
+            <button (click)="editField('projectType')" class="text-black">Edit</button>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Estimated Budget:</strong> {{ estimatedBudget }}</p>
+            <button (click)="editField('estimatedBudget')" class="text-black">Edit</button>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Project Duration:</strong> {{ projectDuration }}</p>
+            <button (click)="editField('projectDuration')" class="text-black">Edit</button>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Key Objectives/Goals:</strong> {{ keyObjectives }}</p>
+            <button (click)="editField('keyObjectives')" class="text-black">Edit</button>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Additional Notes:</strong> {{ additionalNotes }}</p>
+            <button (click)="editField('additionalNotes')" class="text-black">Edit</button>
+        </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="mt-8 text-center">
+        <button (click)="submitProjectRequest()" class="bg-black text-white py-2 px-6 rounded mx-2">
+            Send Project Request to Contractor
+        </button>
+        <button (click)="goBackToEdit()" class="mx-2 bg-black text-white py-2 px-6 rounded  text-black mt-4">Edit Entire Form</button>
+    </div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

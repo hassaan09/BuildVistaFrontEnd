@@ -1,0 +1,57 @@
+.container-fluid{
+    background-color: #B6BCBF;
+    
+   
+
+}
+.form-group input{
+    width: 400px;
+}
+.form-group label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+}
+.bg-image{
+    background-image:url('/assets/images/contractorform.jpg');
+    background-size:cover;
+   opacity:0.8;
+    
+    height: 200px;
+    width: 100%;
+    z-index: 0;
+    
+}
+.up-text{
+
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    z-index: -1;
+    color: black;
+    display: flex;
+    justify-content:center;
+    margin-top: 50px;
+
+
+
+}
+.container{
+    background-color:#DBDEDF ;
+    margin-top: -40px;
+    z-index: 1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.button{
+    background-color: black;
+    color: white;
+    width: 150px;
+    font-size: 20px;
+    
+}
+.form-control{
+    margin-bottom: 8px;
+}
+    
