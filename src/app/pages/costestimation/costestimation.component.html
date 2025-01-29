@@ -1,0 +1,89 @@
+
+<app-navbar2></app-navbar2>
+<div class="container-fluid">
+    <div class="row row1 text-lg">
+        <div class="col-6">
+            <h2  class="title ml-4 mt-6">Construction cost calculator</h2>
+            <p class="mt-4 ml-4 ">Use our Construction Cost Calculator to get a quick estimate of required building materials along with their costs.Now you can build your dream house according to 
+                your own choice and by calculating the budget</p>
+        </div>
+        <div class="col-6 image1">
+           
+                <img class= "image-cost" src ="/assets/images/costestimation.avif" alt="">
+
+            
+
+        </div>
+
+    </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8 ">
+      <div class="calculator-container  pt-0">
+        <h2 style="font-weight:bold;" class=" pt-6 calc-title">Estimate your construction cost</h2>
+        
+
+        <form [formGroup]="costCalculatorForm" (ngSubmit)="calculateCost()">
+          <div class="form-row">
+            <!-- Area Size -->
+            <div class="form-group col-md-3">
+              <label style="font-weight: bold;" for="areaSize">Area Size</label>
+              <input type="number" class="form-control" id="areaSize" formControlName="areaSize" placeholder="1" required>
+            </div>
+            
+            <!-- Area Type -->
+            <div class="form-group col-md-3">
+              <label style="font-weight: bold;" for="areaType">Area Type</label>
+              <select id="areaType" class="form-control" formControlName="areaType">
+                <option *ngFor="let type of areaTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+        
+            <!-- Estimation Type -->
+            <div class="form-group col-md-3">
+              <label style="font-weight: bold;" for="estimationType">Estimation Type</label>
+              <select id="estimationType" class="form-control" formControlName="estimationType">
+                <option *ngFor="let type of estimationTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+        
+            <!-- Floors -->
+            <div class="form-group col-md-3">
+              <label style="font-weight: bold;" for="floors">Floors</label>
+              <select id="floors" class="form-control" formControlName="floors">
+                <option *ngFor="let floor of floorsList" [value]="floor">{{ floor }}</option>
+              </select>
+            </div>
+          </div>
+        
+          <div class="form-row">
+            <!-- Construction City -->
+            <div class="form-group col-md-6">
+              <label style="font-weight: bold;" for="constructionCity">Construction City</label>
+              <select id="constructionCity" class="custom-select form-control" formControlName="city">
+                <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+              </select>
+            </div>
+          </div>
+        
+          <!-- Calculate Button -->
+          <button type="submit" class="form-group btn calculate-btn mt-4">Calculate Cost</button>
+        </form>        
+
+        <!-- Result Section -->
+        <div class="result-box">
+          <h4>Your Estimated Cost is...</h4>
+          <div id="estimatedCost" class="display-4">{{ costEstimation?.totalCost }}Rs</div>
+          <button (click)="navigateToCostdetails()" type="button" class="btn btnv mt-3"> View details</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+
+</div>
+
+<router-outlet></router-outlet>

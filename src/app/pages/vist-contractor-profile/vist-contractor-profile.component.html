@@ -1,0 +1,92 @@
+
+<app-navbar2></app-navbar2>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div class="bg-gradient-to-b from-gray-200 to-black h-full w-screen" *ngIf="contractor; else loading">
+<div class="container py-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="profile-card row">
+          <!-- Image Section -->
+          <div class="col-md-6 d-flex align-items-center justify-content-center ">
+            <img [src]="contractor.profilePic" alt="Profile Image" class="profile-image">
+          </div>
+          
+          <!-- Information Section -->
+          <div class="col-md-6 mt-4 ">
+            <h3>Company Profile</h3>
+            <hr>
+            <div class="row">
+              <div class="col mb-3">
+                <h6>Company Name</h6>
+                <p class="text-muted">{{ contractor.companyName }}</p>
+              </div>
+              <div class="col mb-3">
+                <h6>Email</h6>
+                <p class="text-muted">{{ contractor.email }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mb-3">
+                <h6>Price with Material</h6>
+                <p class="text-muted">{{ contractor.priceWithMaterial | currency }}</p>
+              </div>
+              <div class="col mb-3">
+                <h6>Price without Material</h6>
+                <p class="text-muted">{{ contractor.priceWithoutMaterial | currency }}</p>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col mb-3">
+                <h6>Projects Completed</h6>
+                <p class="text-muted">{{ contractor.projectCompleted }}</p>
+              </div>
+              <div class="col mb-3">
+                <h6>Ongoing Projects</h6>
+                <p class="text-muted">{{ contractor.projectsOngoing }}</p>
+              </div>
+            </div> -->
+            <div class="row">
+              <div class="col-6 ">
+                <h6>Phone Number</h6>
+                <p class="text-muted">{{ contractor.contactNo }}</p>
+              </div>
+              <div class="col-6 ">
+                <h6>City</h6>
+                <p class="text-muted">{{ contractor.location }}</p>
+              </div>
+              <!-- <div class="col p-1 d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot ml-1"></i>
+                <p class="text-muted mt-3 ml-1">First floor Office#10 Saddique Trade Center Lahore,Pakistan</p>
+              </div> -->
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <h6>Description</h6>
+                    <p class="text-muted">{{ contractor.description }}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="  d-flex justify-content-center">
+                    <button (click)="navigateToStartnewproject(contractorId)"
+                    class="button btn">Start a Project </button>
+                   
+                  </div>
+                 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <ng-template #loading>
+    <p>Loading contractor details...</p>
+  </ng-template>
+<app-footer></app-footer>
+<router-outlet></router-outlet>
+
+  

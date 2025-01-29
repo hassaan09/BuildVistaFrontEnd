@@ -1,0 +1,52 @@
+<app-contractor-navbar></app-contractor-navbar>
+<div class="review-container bg-white mx-auto p-8 mt-10 shadow-lg max-w-2xl">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Request of Project</h2>
+    
+    <!-- Project Details Section -->
+    <div class="project-details space-y-4">
+        <div class="flex justify-between">
+            <p><strong>Project Name:</strong> {{ projectDetails.projectName }}</p>
+           
+        </div>
+        
+        <div class="flex justify-between">
+            <p><strong>Project Location:</strong> {{ projectDetails?.projectLocation }}</p>
+            
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Project Type:</strong> {{ projectDetails?.projectType }}</p>
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Estimated Budget:</strong> {{ projectDetails?.estimatedBudget }}</p>
+           
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Project Duration:</strong> {{ projectDetails?.projectDuration }}</p>
+            
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Key Objectives/Goals:</strong> {{ projectDetails?.description }}</p>
+           
+        </div>
+
+        <div class="flex justify-between">
+            <p><strong>Additional Notes:</strong> {{ projectDetails?.description }}</p>
+            
+        </div>
+        <div class="mt-8 text-center" *ngIf="loginUser.role === 'contractor' && projectDetails.status === 'Planning' ">
+            <button (click)="submitProjectRequest('accept')" class="bg-black text-white py-2 px-6 rounded mx-2">
+                Approve
+            </button>
+            <button (click)="submitProjectRequest('reject')" class="mx-2 bg-black text-white py-2 px-6 rounded  text-black mt-4">Reject</button>
+        </div>
+    </div>
+    
+    
+   
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

@@ -1,0 +1,85 @@
+<app-navbar2></app-navbar2>
+
+<div class="bg-gradient-to-b from-gray-200 to-black flex justify-center items-center flex-grow">
+  <form (ngSubmit)="createProject()" class="bg-white p-10 shadow-lg rounded w-full max-w-4xl">
+    <h2 class="text-center text-2xl font-bold mb-4">Start Your New Project</h2>
+    <p class="text-center text-gray-600 mb-8">
+      Follow the steps below to set up your project details. Provide as much information as possible to help us match
+      you with the best contractors.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="projectName" class="block text-gray-700">Project Name<span
+            class="required-asterisk">*</span></label>
+        <input type="text" id="projectName" class="w-full p-2 border rounded" placeholder="Enter project name"
+          [(ngModel)]="projectData.projectName" name="projectName" required />
+      </div>
+      <div>
+        <label for="projectLocation" class="block text-gray-700">Project Location<span
+            class="required-asterisk">*</span></label>
+        <input type="text" id="projectLocation" class="w-full p-2 border rounded" placeholder="Enter project location"
+          [(ngModel)]="projectData.projectLocation" name="projectLocation" required />
+      </div>
+      <div>
+        <label for="projectType" class="block text-gray-700">Project Type<span
+            class="required-asterisk">*</span></label>
+        <select id="projectType" class="w-full p-2 border rounded" [(ngModel)]="projectData.projectType"
+          name="projectType" required>
+          <option>Select your type</option>
+          <option>Residential</option>
+          <option>Commercial</option>
+          <option>Industrial</option>
+          <option>Infrastructure</option>
+          <option>Public/Government</option>
+          <option>Renovation/Remodeling</option>
+          <option>Sustainable/Eco-Friendly</option>
+          <option>Healthcare</option>
+          <option>Hospitality</option>
+          <option>Mixed-Use Development</option>
+          <option>Educational</option>
+          <option>Sports & Entertainment</option>
+          <option>Special Projects</option>
+        </select>
+      </div>
+      <div>
+        <label for="startDate" class="block text-gray-700">Project Start Date</label>
+        <input type="date" id="startDate" class="w-full p-2 border rounded" [(ngModel)]="projectData.projectStartDate"
+          name="projectStartDate" required />
+      </div>
+      <div>
+        <label for="estimatedBudget" class="block text-gray-700">Estimated Budget</label>
+        <input type="string" id="estimatedBudget" class="w-full p-2 border rounded" placeholder="Enter estimated budget"
+          [(ngModel)]="projectData.estimatedBudget" name="estimatedBudget" required />
+      </div>
+      <div>
+        <label for="projectDuration" class="block text-gray-700">Project Duration</label>
+        <input type="text" id="projectDuration" class="w-full p-2 border rounded" placeholder="Enter project duration"
+          [(ngModel)]="projectData.projectDuration" name="projectDuration" required />
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <label for="documentUpload" class="block text-gray-700">Design Documents Upload</label>
+      <input type="file" id="documentUpload" class="w-full p-2 border rounded" (change)="onFileChange($event)">
+    </div>
+
+    <div class="mb-6">
+      <label for="objectives" class="block text-gray-700">Key Objectives/Goals</label>
+      <textarea id="objectives" rows="3" class="w-full p-2 border rounded" placeholder="Enter key objectives or goals"
+        [(ngModel)]="projectData.objectives" name="objectives" required></textarea>
+    </div>
+
+    <div class="mb-6">
+      <label for="additionalNotes" class="block text-gray-700">Additional Notes</label>
+      <textarea id="additionalNotes" rows="3" class="w-full p-2 border rounded" placeholder="Enter additional notes"
+        [(ngModel)]="projectData.notes" name="notes"></textarea>
+    </div>
+    <div class="flex justify-center">
+      <button type="submit" class="mx-auto bg-black text-white px-10 py-2 rounded hover:bg-gray-400">Submit and
+        Review</button>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>

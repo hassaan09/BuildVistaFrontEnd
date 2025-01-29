@@ -1,0 +1,39 @@
+<app-navbar2></app-navbar2>
+<div class="bg-gray-200 min-h-screen p-6">
+    <h2 class="text-3xl font-bold text-center mb-8">Notifications</h2>
+  
+    <div class="container mx-auto space-y-6">
+      <!-- Notification Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300" *ngFor="let notification of notifications">
+        <div class="flex justify-between items-center">
+          <div class="text-left">
+            <p class="text-lg font-semibold">{{notification?.message}}</p>
+            <p class="text-sm text-gray-500">{{notification?.updatedAt}}</p>
+          </div>
+          <app-button label="view"
+            (click)="requestview(notification?.project)"
+            styleType='simple'
+            class="hover:font-semibold"></app-button>
+            
+        </div>
+      </div>
+  
+      <!-- Notification Card 2 -->
+      <!-- <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <div class="flex justify-between items-center">
+          <div class="text-left">
+            <p class="text-lg font-semibold">Contractor XYZ accepted your project request.</p>
+            <p class="text-sm text-gray-500">1 day ago</p>
+          </div>
+          <app-button label="view"
+            (click)="requestview()"
+            styleType='simple'
+            class="hover:font-semibold"></app-button>
+        </div>
+      </div> -->
+  
+      <!-- Additional notifications can be added similarly -->
+    </div>
+  </div>
+  <app-footer></app-footer>
+  <app-root></app-root>

@@ -1,0 +1,46 @@
+<app-contractor-navbar></app-contractor-navbar>
+<div class="w-full  px-12 bg-gray-200">
+    <input type="text" class="mx-3 my-3" placeholder="Search topics..." (input)="searchTopics($event)">
+    <div class="">
+        <h3>Frequently Asked Questions</h3>
+        <div *ngFor="let faq of faqs">
+          <h4>{{ faq.question }}</h4>
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+
+      <div class="troubleshooting-section ">
+        <h3>Troubleshooting</h3>
+        
+          <p>Login Issues: Try resetting your password or clearing browser cache.</p>
+          <p>Project Not Loading: Ensure a stable internet connection and refresh the page.</p>
+          <p>Notifications Not Showing: Check your notification settings and enable them in your browser.</p>
+        
+      </div>
+      <div class="contact-support">
+        <h3>Contact Support</h3>
+        <p>Email: <a href="mailto:support@buildvista.com">support.com</a></p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="">
+        <h3>Feedback</h3>
+        <p>Help us improve by providing your feedback.</p>
+        
+        <!-- Input field with larger area and placeholder -->
+        <textarea 
+          class="feedback-input" 
+          placeholder="Enter your feedback here..." 
+          rows="4">
+        </textarea>
+        
+        <!-- Submit button below the input field -->
+        <app-button
+          label="Submit Feedback"
+          styleType="simple"
+          class="submit-button pb-6">
+        </app-button>
+      </div>
+
+</div>
+<app-footer></app-footer>
+<app-root></app-root>

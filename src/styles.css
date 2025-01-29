@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+required-asterisk {
+    color: red;
+    margin-left: 5px;
+  }
+
+.feature-page {
+   
+    padding: 40px;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+  }
+  
+  .feature-page h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .feature-page p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .feature-page ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .feature-page li {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+  .feature-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }

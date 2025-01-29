@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+
+<div class="min-h-full flex-col items-center justify-center px-6 py-12 lg:px-8 bg-gray-200">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-24 w-auto"
+      src="https://t4.ftcdn.net/jpg/04/37/93/35/360_F_437933537_pvIQ4hmbnvyT3lIMscN9kg0m0TabSOJ8.jpg"
+      alt="Your Company" />
+    <h2 class="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an Account</h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="space-y-6">
+      <div>
+        <label for="fullname" class="block text-sm font-medium leading-6 text-gray-900">Full Name<span
+            class="required-asterisk">*</span></label>
+        <div class="mt-2">
+          <input id="fullname" formControlName="fullname" type="text"
+            class="px-2 block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6" />
+          <div *ngIf="signupForm.get('fullname')?.touched && signupForm.get('fullname')?.invalid"
+            class="text-red-500 text-xs mt-1">
+            Full name is required (min 3 characters).
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email Address<span
+            class="required-asterisk">*</span></label>
+        <div class="mt-2">
+          <input id="email" formControlName="email" type="email"
+            class="px-2 block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6" />
+          <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid"
+            class="text-red-500 text-xs mt-1">
+            Please provide a valid email address.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="contactNo" class="block text-sm font-medium leading-6 text-gray-900">Phone Number<span
+            class="required-asterisk">*</span></label>
+        <div class="mt-2">
+          <input id="contactNo" formControlName="contactNo" type="tel"
+            class="px-2 block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6" />
+          <div *ngIf="signupForm.get('contactNo')?.touched && signupForm.get('contactNo')?.invalid"
+            class="text-red-500 text-xs mt-1">
+            Phone number is required (10-15 digits).
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password<span
+            class="required-asterisk">*</span></label>
+        <div class="mt-2">
+          <input id="password" formControlName="password" type="password"
+            class="px-2 block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6" />
+          <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid"
+            class="text-red-500 text-xs mt-1">
+            Password must be at least 8 characters.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="confirmPassword" class="block text-sm font-medium leading-6 text-gray-900">Re-type
+          Password<span class="required-asterisk">*</span></label>
+        <div class="mt-2">
+          <input id="confirmPassword" formControlName="confirmPassword" type="password"
+            class="px-2 block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6" />
+          <div *ngIf="signupForm.errors?.['passwordsDoNotMatch']"
+            class="text-red-500 text-xs mt-1">
+            Passwords do not match.
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <app-button label="Join as Contractor" styleType="simple" [disabled]="signupForm.invalid"
+          (onClick)="navigateToContractorform()" class="flex w-full justify-center rounded-md bg-black mr-1 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"></app-button>
+        <app-button label="Join as Client" styleType="simple" [disabled]="signupForm.invalid"
+          (onClick)="navigateToClientform()" class="flex ml-1 w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"></app-button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      I'm already a member!
+      <a href="/login" class="font-semibold leading-6 text-black hover:text-black">Sign in</a>
+    </p>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>

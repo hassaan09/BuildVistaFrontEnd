@@ -1,0 +1,57 @@
+<app-contractor-navbar></app-contractor-navbar>
+<div class="pl-8">
+    <div class="settings-section account-settings">
+        <h2>Account Settings</h2>
+      
+        <!-- Display Mode -->
+        <div *ngIf="!isEditing">
+          <p><strong>Full Name:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone Number:</strong> {{ user.contactNo }}</p>
+          <button class="edit-button" (click)="navigateToContractorform()">Edit</button>
+        </div>
+      
+        <!-- Edit Mode -->
+       
+      </div>
+      
+  <div class="settings-section">
+    <h2>Notification Settings</h2>
+    
+    <label class="toggle-switch">
+      <input type="checkbox" [(ngModel)]="notificationsEnabled" (change)="toggleNotifications()" />
+      <span class="slider"></span>
+    </label>
+    
+    <p>{{ notificationsEnabled ? 'Notifications are enabled.' : 'Notifications are disabled.' }}</p>
+  </div>
+  
+  <div class="settings-section">
+    <h2>Change Password</h2>
+    
+    <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+      <label for="currentPassword">Current Password<span class="required-asterisk">*</span></label>
+      <input type="password" id="currentPassword" formControlName="currentPassword" />
+      <div *ngIf="changePasswordForm.get('currentPassword')?.touched && changePasswordForm.get('currentPassword')?.invalid" class="error">
+        Current password is required.
+      </div>
+  
+      <label for="newPassword">New Password<span class="required-asterisk">*</span></label>
+      <input type="password" id="newPassword" formControlName="newPassword" />
+      <div *ngIf="changePasswordForm.get('newPassword')?.touched && changePasswordForm.get('newPassword')?.invalid" class="error">
+        <span *ngIf="changePasswordForm.get('newPassword')?.errors?.['required']">New password is required.</span>
+        <span *ngIf="changePasswordForm.get('newPassword')?.errors?.['minlength']">Password must be at least 6 characters.</span>
+      </div>
+  
+      <label for="confirmPassword">Confirm New Password<span class="required-asterisk">*</span></label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+      <div *ngIf="changePasswordForm.get('confirmPassword')?.touched && changePasswordForm.hasError('mismatch')" class="error">
+        Passwords do not match.
+      </div>
+  
+      <button type="submit" [disabled]="changePasswordForm.invalid">Update Password</button>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>
+<app-root></app-root>

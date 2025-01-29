@@ -1,0 +1,12 @@
+.footer-container {
+    background-color: black; 
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .contact-info i, .legal-links i, .social-links i {
+    color: #f3f4f6; /* Tailwind Gray 200 */
+  }

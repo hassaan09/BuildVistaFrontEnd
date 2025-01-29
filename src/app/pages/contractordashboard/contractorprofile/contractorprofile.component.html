@@ -1,0 +1,90 @@
+<app-contractor-navbar></app-contractor-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="container py-2">
+          <div class="row  d-flex justify-content-center align-items-center ">
+            <div class="col col-lg-8 mb-4 mb-lg-0">
+              <div class="card card1 mb-3" style="border-radius: .5rem;">
+                <div class="row g-0">
+                  <div class="col-md-4 gradient-custom text-center text-white"
+                    style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                    <img [src]="contractor?.profile?.profilePic"
+                      alt="Avatar" class=" image1 img-fluid  mb-3" style="width: 80px;" />
+                    <h5>{{contractor?.username}}</h5>
+                   
+                    <i class="far fa-edit mb-5"></i>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h5>Contractor profile</h5>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                            <h6>Full Name</h6>
+                            <p class="text-muted">{{contractor?.username}}</p>
+                          </div>
+                        <div class="col-6 mb-3">
+                          <h6>Email</h6>
+                          <p class="text-muted">{{contractor?.email}}</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Phone</h6>
+                          <p class="text-muted">{{contractor?.contactNo}}</p>
+                        </div>
+                        <!-- <div class="col-6 mb-3">
+                            <h6>Age</h6>
+                            <p class="text-muted">22</p>
+                          </div> -->
+                          <div class="col-6 mb-3">
+                            <h6>Price with material</h6>
+                            <p class="text-muted">{{contractor?.profile?.priceWithMaterial}}</p>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h6>Price without material</h6>
+                            <p class="text-muted">{{contractor?.profile?.priceWithoutMaterial}}</p>
+                          </div>
+                      </div>
+                      
+                      <div class="row ">
+                        <!-- <div class="col-6 mb-3">
+                          <h6>Sex</h6>
+                          <p class="text-muted">Male </p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6>Date of birth</h6>
+                            <p class="text-muted">30-10-2001 </p>
+                          </div> -->
+                        <div class="col-6 mb-3">
+                          <h6>location</h6>
+                          <p class="text-muted">{{contractor?.profile?.location}}</p>
+                        </div>
+                        <!-- <div class="col mb-3">
+                            <h6>Addres</h6>
+                            <p class="text-muted">Lahore,Pakistan</p>
+                          </div> -->
+                      </div>
+                     
+                      <hr class="mb-4">
+
+                      <div class="  d-flex justify-content-center">
+                        <button (click)="navigateToContractorform()" class="button btn">Edit profile </button>
+                       
+                      </div>
+                     
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+  
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>
+

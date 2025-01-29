@@ -1,0 +1,16 @@
+review-container {
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.project-details p {
+    color: #333333;
+}
+
+button {
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.login-btn{
+    text-decoration: none;
+    
+    border: 1px solid white;
+    color: white;
+}
+.signup-btn{
+    text-decoration: none;
+    
+    background-color: white;
+    color: black;
+
+}
+.login-btn:hover{
+    background-color:rgb(162, 156, 156); 
+    color: black;
+    border: 1px solid black;
+}
+.signup-btn:hover{
+    background-color: rgb(162, 156, 156);
+    color: white;
+    border: 1px solid white;
+}

@@ -1,0 +1,99 @@
+<app-navbar2></app-navbar2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="bg-image">
+            <div class="up-text">
+                <p>Complete your profile</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container col-md-6">
+            <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group mt-2">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" formControlName="fullName"
+                            placeholder="Enter Full name" />
+                        <small *ngIf="clientForm.get('fullName')?.touched && clientForm.get('fullName')?.invalid"
+                            class="text-danger">Full name is required.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactNo">Phone Number</label>
+                    <input type="tel" class="form-control" id="contactNo" formControlName="contactNo"
+                        placeholder="Enter phone number" />
+                    <small *ngIf="clientForm.get('contactNo')?.touched && clientForm.get('contactNo')?.invalid"
+                        class="text-danger">Enter a valid phone number.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        placeholder="Enter email" />
+                    <small *ngIf="clientForm.get('email')?.touched && clientForm.get('email')?.invalid"
+                        class="text-danger">Enter a valid email.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="cnic">Enter CNIC:</label>
+                    <input type="text" class="form-control" id="cnic" formControlName="cnic"
+                        placeholder="35201-1234567-1" />
+                    <small *ngIf="clientForm.get('cnic')?.touched && clientForm.get('cnic')?.invalid"
+                        class="text-danger">Enter a valid CNIC (xxxxx-xxxxxxx-x).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Enter Age</label>
+                    <input type="number" class="form-control" id="age" formControlName="age"
+                        placeholder="Enter your age" />
+                    <small *ngIf="clientForm.get('age')?.touched && clientForm.get('age')?.invalid"
+                        class="text-danger">Age must be between 1 and 120.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" formControlName="address"
+                        placeholder="Enter address" />
+                    <small *ngIf="clientForm.get('address')?.touched && clientForm.get('address')?.invalid"
+                        class="text-danger">Address is required.</small>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="profilePic">Profile Picture</label>
+                        <input type="file" class="form-control-file" id="profilePic" (change)="onFileChange($event)" />
+                        <small *ngIf="clientForm.get('profilePic')?.touched && clientForm.get('profilePic')?.invalid"
+                            class="text-danger">Uploading a profile picture is required.</small>
+                    </div>
+
+                    <div class="w-100 mt-2 mb-4" *ngIf="imagePreview || selectedFile">
+                        <img class="h-20 w-20 rounded-full" [src]="imagePreview ?? selectedFile" />
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" id="location" formControlName="location">
+                        <option value="" disabled selected>Select location</option>
+                        <option value="lahore">Lahore</option>
+                        <option value="islamabad">Islamabad</option>
+                        <option value="karachi">Karachi</option>
+                    </select>
+                    <small *ngIf="clientForm.get('location')?.touched && clientForm.get('location')?.invalid"
+                        class="text-danger">Location is required.</small>
+                </div>
+
+                <div class="button1">
+                    <button type="submit" class="btn my-3 button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>

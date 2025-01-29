@@ -1,0 +1,58 @@
+@if (loginUser) {
+    <app-navbar2></app-navbar2>
+  } @else {
+    <app-navbar></app-navbar>
+  }<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=update" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=paid" />
+</head>
+<div class="bg-gray-200 h-auto ">
+<div class="flex ">
+<div class="w-6/12">
+<p class="ml-10 mt-12  text-lg font-semibold mr-2 text-justify">At BuildVista, we understand the challenges faced by construction professionals in managing complex projects. That's why we developed a platform that provides full visibility across every phase of construction, from early-stage planning to final completion. With BuildVista, project managers, contractors, and stakeholders can effortlessly track milestones, monitor expenses, and collaborate seamlessly with all team members.BuildVista is the ultimate solution for modern construction management, offering a seamless blend of real-time project visibility, accurate cost prediction, and effortless client-contractor communication. Our platform is designed to streamline your workflow, from planning and budgeting to task management and collaboration.Experience the power of data-driven decision making and keep your projects on track, on budget, and on time with BuildVista.</p>
+</div>
+<div class="ml-36 pl-4 mt-32 text-xl font-extrabold ">
+<p>Dont just Build-Build Better with BuildVista.</p>
+<p>Sign Up Now!</p>
+</div>
+</div>
+
+<div class="flex items-center ">
+    <div class="mx-20 mb-40 mt-10 icon-text-container ">
+        <span class="animate-pulse material-symbols-outlined large-icon">
+        <a href="/feature1"><img src="assets/icons/update.png" alt="real-time visibility" /></a>
+         </span>
+    
+           <a>real-time visibility</a>
+                     
+</div>
+
+
+<div class="mx-20 mb-40 mt-10 icon-text-container ">
+    <span class="animate-pulse material-symbols-outlined large-icon">
+    <a href="/feature2"><img src="assets/icons/paid.png" alt="" /></a>
+    </span>
+
+    <a>cost estimation</a>
+              
+</div>
+<div class="mx-20 mb-40 mt-10 icon-text-container ">
+    <span class="animate-pulse material-symbols-outlined large-icon">
+    <a href="/feature3"><img src="assets/icons/prediction.png" alt="" /></a>
+        </span>
+
+    <a>market trends prediction</a>
+              
+</div>
+<div class="mx-20 mb-40 mt-10 icon-text-container ">
+    
+    <span class="animate-pulse material-symbols-outlined large-icon">
+        <a href="/feature4"><img src="assets/icons/communicate.png" alt="" /></a>
+            </span>
+    <a>communication</a>
+              
+</div>
+</div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

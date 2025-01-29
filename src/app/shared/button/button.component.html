@@ -1,0 +1,17 @@
+<button
+  [ngClass]="{
+    'bg-blue-500 text-white hover:bg-blue-600 font-bold': styleType === 'primary',
+    'bg-green-500 text-white hover:bg-green-600 font-bold': styleType === 'success',
+    'bg-yellow-500 text-white hover:bg-yellow-600 font-bold': styleType === 'warning',
+    'bg-red-500 text-white hover:bg-red-600 font-bold': styleType === 'danger',
+    'bg-gray-800 text-white hover:bg-gray-900': styleType === 'dark',
+    'bg-black text-white hover:bg-gray-700 active:bg-gray-600':styleType === 'simple',
+    'bg-gray-300 text-gray-700 ': disabled
+
+  }"
+  [disabled]="disabled"
+  class="px-4 py-2 rounded focus:outline-none transition duration-300"
+  (click)="handleClick()"
+>
+  {{ label }}
+</button>

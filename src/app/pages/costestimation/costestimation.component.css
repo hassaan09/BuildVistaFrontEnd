@@ -1,0 +1,93 @@
+
+.calculator-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: -50px;
+    
+    
+  }
+  .result-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .calc-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .calculate-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #212324;
+    color: #f8f9fa;
+    font-size: 22px;
+  }
+.row1{
+  height: 350px;
+  background-color:#c4c3c0 ;
+  text-align: justify;
+  margin: 0px;
+  padding: 0px;
+}
+.container-fluid{
+
+  
+  background-color: #e3e2de;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+ 
+  
+  
+
+
+}
+.image-cost{
+  
+  display: flex;
+  margin-right: 0px;
+  justify-content:right;
+  height:350px;
+  width: 100%;
+
+
+}
+.image1{
+  justify-content: right;
+  display: flex;
+  padding-right: 0px;
+  
+}
+
+.required::after {
+  content: " *";
+  color: red;
+  font-size: 1.2em; /* Adjust size of the asterisk */
+}
+.custom-select option {
+  background-color: white;  /* Background of the dropdown */
+  color: black;             /* Text color */
+  padding: 10px;
+  border: 1px solid #ccc;    /* Border of the dropdown */
+  border-radius: 4px;
+  width: 100%;              /* Full width */
+}  
+.custom-select option:hover {
+  background-color: black;  /* Background of the dropdown */
+  color: white;             /* Text color */
+  padding: 10px;
+  border: 1px solid #ccc;    /* Border of the dropdown */
+  border-radius: 4px;
+  width: 100%;              /* Full width */
+}  
+.form-group{
+  font-family: 'Times New Roman', Times, serif;
+}
+.btnv{
+  background-color:  #212324;
+  color: #f8f9fa;
+}

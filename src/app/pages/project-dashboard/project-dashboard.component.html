@@ -1,0 +1,86 @@
+<app-navbar2></app-navbar2>
+<div class="dashboard-container p-3">
+    <!-- Project Information Section -->
+    <section class="project-info">
+      <h1>{{ projectDetail.name }}</h1>
+      <p>Status: <span [class]="project.status">{{ projectDetail.status | titlecase }}</span></p>
+      <p>Completion: {{ projectDetail.completion }}%</p>
+      <!-- <app-progresscircle></app-progresscircle> -->
+      <p>Description: {{ projectDetail.description }}</p>
+    </section>
+  
+    <!-- Progress Tracker Section -->
+    <section class="progress-tracker">
+      <h2>Project Phases</h2>
+      <ul class="phases">
+        <li [class.completed]="projectDetail.status === 'planning' || project.status === 'ongoing' || project.status === 'near completion' || project.status === 'completed'">Planning</li>
+        <li [class.completed]="projectDetail.status === 'ongoing' || project.status === 'near completion' || project.status === 'completed'">Ongoing</li>
+        <li [class.completed]="projectDetail.status === 'near completion' || project.status === 'completed'">Near Completion</li>
+        <li [class.completed]="projectDetail.status === 'completed'">Completed</li>
+      </ul>
+    </section>
+  
+    <!-- Real-Time Updates Section -->
+    <section class="real-time-updates">
+      <h2>Real-Time Updates</h2>
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img [src]="projectDetail?.realTimeUpdate" (click)="togglePopup()" class="h-40 w-40 cursor-pointer" alt="Update photo" />
+          <p>{{ projectDetail?.updatedAt }}</p>
+        </div>
+
+        <div 
+        *ngIf="showPopup" 
+        class="popup fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-50"
+        (click)="togglePopup()">
+        <img 
+          [src]="projectDetail?.realTimeUpdate" 
+          alt="Full Image"  style="max-width: 90vw;width: -webkit-fill-available;"
+          class="max-h-screen max-w-screen shadow-xl rounded"
+        />
+      </div>
+      </div>
+    </section>
+
+    <section class="flex gap-10 real-time-updates">
+      <div>
+        <!-- File Input -->
+      <label for="fileInput">Choose File:</label>
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" />
+      </div>
+    
+      <div *ngIf="loginUser.role === 'contractor'">
+        <!-- Completion Percentage Input (Optional) -->
+      <label for="completionInput">Completion (%):</label>
+      <input
+        type="number"
+        id="completionInput"
+        [(ngModel)]="completion"
+        placeholder="Enter completion (0-100)"
+        min="0"
+        max="100"
+        class="w-40 bg-gray-50 border"
+      />
+      </div>
+    
+      <!-- Submit Button -->
+      <button (click)="updateRealTime()">Submit Update</button>
+    </section>
+    
+  
+    <!-- Chat with Contractor Section -->
+    <section class="chat">
+      <h2>Chat with Contractor</h2>
+      <div class="chat-box">
+        <div *ngFor="let message of chatMessages" class="chat-message" [class.client]="message.senderId === loginUser.profile.userId">
+          <p>{{ message.text }}</p>
+          <small>{{ message.sentAt }}</small>
+        </div>
+      </div>
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message" />
+      <button (click)="sendMessage()">Send</button>
+    </section>
+    
+  </div>
+<app-footer></app-footer>
+<app-root></app-root>

@@ -1,0 +1,35 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+    height: 550px;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgb(208, 208, 208), rgb(84, 79, 77));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgb(199, 199, 198), rgb(58, 58, 58))
+    }
+    
+    .card1{
+
+        height: 550px;
+        width: 950px;
+        background-color: #e9e9e9;
+    }
+    .image1
+{
+    margin-left: 110px;
+    margin-top: 120px;
+
+}
+.button{
+
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    
+
+}

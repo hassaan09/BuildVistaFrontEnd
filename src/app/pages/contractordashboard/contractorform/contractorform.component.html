@@ -1,0 +1,125 @@
+<app-contractor-navbar></app-contractor-navbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="bg-image">
+      <div class="up-text">
+        <p>Contractor Information Form</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container col-md-6">
+      <form [formGroup]="contractorForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mt-2">
+          <label for="companyName">Company Name</label>
+          <input
+            type="text"
+            id="companyName"
+            formControlName="companyName"
+            class="form-control"
+            placeholder="Enter company name"
+          />
+          <small class="text-danger" *ngIf="contractorForm.get('companyName')?.invalid && contractorForm.get('companyName')?.touched">
+            Company name is required.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="priceWithMaterial">Price with Material</label>
+          <input
+            type="number"
+            id="priceWithMaterial"
+            formControlName="priceWithMaterial"
+            class="form-control"
+            placeholder="Enter price with material"
+          />
+          <small class="text-danger" *ngIf="contractorForm.get('priceWithMaterial')?.invalid && contractorForm.get('priceWithMaterial')?.touched">
+            Price with material must be a valid number.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="priceWithoutMaterial">Price without Material</label>
+          <input
+            type="number"
+            id="priceWithoutMaterial"
+            formControlName="priceWithoutMaterial"
+            class="form-control"
+            placeholder="Enter price without material"
+          />
+          <small class="text-danger" *ngIf="contractorForm.get('priceWithoutMaterial')?.invalid && contractorForm.get('priceWithoutMaterial')?.touched">
+            Price without material must be a valid number.
+          </small>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="officeAddress">Office Address</label>
+          <input
+            type="text"
+            id="officeAddress"
+            formControlName="officeAddress"
+            class="form-control"
+            placeholder="Enter office address"
+          />
+          <small class="text-danger" *ngIf="contractorForm.get('officeAddress')?.invalid && contractorForm.get('officeAddress')?.touched">
+            Office address is required.
+          </small>
+        </div> -->
+
+        <div class="form-group">
+          <label for="ProfilePic">Company Profile Picture</label><br />
+          <input
+            type="file"
+            id="ProfilePic"
+            (change)="onFileChange($event)"
+            class="form-control-file"
+          />
+          <small class="text-danger" *ngIf="contractorForm.get('ProfilePic')?.invalid && contractorForm.get('ProfilePic')?.touched">
+            Company profile picture is required.
+          </small>
+          <div class="w-100 mt-2 mb-4" *ngIf="imagePreview || selectedFile">
+            <img class="h-20 w-20 rounded-full" [src]="imagePreview ?? selectedFile" />
+        </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <select id="location" formControlName="location" class="form-control">
+            <option value="" disabled selected>Select location</option>
+            <option value="lahore">Lahore</option>
+            <option value="islamabad">Islamabad</option>
+            <option value="Karachi">Karachi</option>
+          </select>
+          <small class="text-danger" *ngIf="contractorForm.get('location')?.invalid && contractorForm.get('location')?.touched">
+            Location is required.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            formControlName="description"
+            class="form-control"
+            rows="4"
+            placeholder="Enter description"
+          ></textarea>
+          <small class="text-danger" *ngIf="contractorForm.get('description')?.invalid && contractorForm.get('description')?.touched">
+            Description is required.
+          </small>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <app-button
+            styleType="simple"
+            label="Submit"
+            class="mb-2 px-2"
+          ></app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

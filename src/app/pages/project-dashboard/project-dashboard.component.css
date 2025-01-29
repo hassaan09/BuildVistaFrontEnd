@@ -1,0 +1,102 @@
+.dashboard-container {
+    display: flex-1;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .project-info, .progress-tracker, .real-time-updates, .chat {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .progress-tracker .phases {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .progress-tracker .phases li {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .progress-tracker .phases li.completed {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .real-time-updates .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .photo-item {
+    flex: 1 0 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .chat .chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .chat .chat-message {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .chat .chat-message.client {
+    background-color: #e0f7fa;
+    align-self: flex-end;
+  }
+  
+  .chat .chat-message:not(.client) {
+    background-color: #e0e0e0;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 60px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 8px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

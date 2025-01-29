@@ -1,0 +1,43 @@
+.clickable-icon {
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+  }
+  .clickable-icon:hover {
+    color: #555;
+  }
+  .large-icon {
+    font-size: 24px; /* Set desired size */
+}
+
+.profile-icon {
+    position: relative;
+  }
+  .dropdown-box {
+    position: absolute;
+    top: 25px; 
+    left: -140px;
+    background-color: #E5E7EB;
+    color: black;
+    border: 1px solid #5c5b5b;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    z-index: 1000;
+  }
+  .dropdown-box p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-box a {
+    display: block;
+    padding: 5px 0;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .dropdown-box a:hover {
+    color: #007bff;
+  }

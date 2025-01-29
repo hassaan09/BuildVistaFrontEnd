@@ -1,0 +1,65 @@
+<app-navbar2></app-navbar2>
+
+<div class="flex  flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-0 bg-gray-200 h-full w-screen">
+    <div class="flex">
+    <div class="flex-1">
+        <h2 class="text-2xl font-bold mb-1 px-20 pt-10">WELCOME!</h2>
+        <p class="text-gray-700 px-20">
+        We're thrilled to have you on board with BuildVista. To get started, explore your project dashboard to start project, view active projects, track progress in real-time, and access our advanced cost prediction tools. If you need help, our support center is just a click away.
+        </p>
+        <div class="">
+            <p class="text-lg font-bold pl-20">Explore Features:</p>
+            <div class="flex ml-20 mb-2">
+                <div class="mr-10">
+            <a href="/costestimation"><img src="assets/icons/costcalculator.png" alt="" /></a>
+            <a>cost Estimator</a>
+            </div>
+            <div class="mr-10">
+                <a href="/market-trends"><img src="assets/icons/markettrends.png" alt="" /></a>
+                <a>Market Trends</a>
+                </div>
+                <div>
+                <a href="/findcontractor"><img src="assets/icons/findcontractor.png" alt="" /></a>
+                <a>Find Contractor</a>
+                </div>
+            </div>
+            <div class="container-sm bg-gray-300 ">
+                <div class="-row top-companies-section  px-md-5">
+                  <div class="col-12">
+                    <h5 class=" text-xl pt-2">Top companies:</h5>
+                    <div class="company-cards  pb-4 d-flex flex-wrap justify-content-around">
+                      <div class="company-card" *ngFor="let contractor of contractors.slice(0,3)">
+                        <img [src]="contractor.profilePic" alt="Company 1" class="img-fluid company-card img">
+                        <p>{{contractor.companyName}}</p>
+                        <span>★★★★☆</span>
+                      </div>
+                      <!-- <div class="company-card">
+                        <img src="assets/images/AH constructors.jpeg" alt="Company 2" class="img-fluid company-card img">
+                        <p>AH Constructors</p>
+                        <span>★★★★★</span>
+                      </div>
+                      <div class="company-card">
+                        <img src="assets/images/jafferconstructors.png" alt="Company 3" class="company-card img">
+                        <p>Jaffer Contractors</p>
+                        <span>★★★★☆</span>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+        </div>
+        
+        
+    
+    
+    <div class="flex-1">
+        <img class="h-full" src="https://images.pexels.com/photos/3609139/pexels-photo-3609139.jpeg" alt="Description of the image">
+    </div>
+    </div>
+    </div>
+    
+<router-outlet></router-outlet>
+<app-footer></app-footer>
